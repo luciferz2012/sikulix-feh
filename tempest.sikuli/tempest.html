@@ -1,0 +1,115 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>tempest.sikuli</h2> <a href="tempest.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">def</span> tryWaitAndClick(p, w1=<span class="dig">0.1</span>, w2=<span class="dig">0</span>):
+    <span class="kw">try</span>:
+        <span class="kw">print</span>(p)
+        m = <span class="skw">wait</span>(p, w1)
+        <span class="skw">wait</span>(w2)
+        <span class="skw">click</span>(m)
+        <span class="kw">return</span> True
+    <span class="kw">except</span>:
+        <span class="kw">pass</span>
+
+<span class="kw">def</span> findClick(ps):
+    <span class="kw">for</span> p <span class="kw">in</span> ps:
+        tryWaitAndClick(p)
+
+<span class="kw">def</span> auto():
+    <span class="kw">if</span> tryWaitAndClick(<img src="1499786291662.png" />, w2=<span class="dig">4</span>) \
+            <span class="kw">and</span> tryWaitAndClick(<img src="1499786340986.png" />, w1=<span class="dig">4</span>) \
+            <span class="kw">and</span> tryWaitAndClick(<img src="1499786373715.png" />, w1=<span class="dig">4</span>):
+        <span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">256</span>):
+            <span class="kw">if</span> tryWaitAndClick(<img src="1499786636807.png" />):
+                <span class="kw">return</span> True
+            <span class="kw">elif</span> tryWaitAndClick(<img src="1499786835386.png" />):
+                <span class="kw">return</span> False
+
+commons = [
+       <img src="1499785682235.png" />,
+       <img src="1499785699548.png" />,
+       <img src="1499786073887.png" />,
+       <img src="1499865066440.png" />,
+       <img src="1499786983787.png" />,
+       <img src="1499788779460.png" />,
+       ]
+
+<span class="kw">def</span> main():
+    <span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">64</span>):
+        findClick(commons)
+        auto()
+
+<span class="kw">if</span> __name__ == <span class="str">'__main__'</span>:
+    main()
+</pre>
+</body>
+</html>
