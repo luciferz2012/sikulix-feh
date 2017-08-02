@@ -1,3 +1,5 @@
+from sikuli import *
+
 def tryWaitAndClick(p, w1=0.1, w2=0):
     try:
         print(p)
@@ -23,19 +25,8 @@ def auto():
                 return False
 
 commons = [
-       "1499785682235.png",
-       "1499785699548.png",
-       "fight1.png",
-       "fight2.png",
-       "ok.png",
-       "close.png",
+       Pattern("fight1.png").similar(0.9),
+       Pattern("fight2.png").similar(0.9),
+       Pattern("ok.png").similar(0.9),
+       Pattern("close.png").similar(0.9),
        ]
-
-def main():
-    # for i in range(64):
-    for i in range(64 * 64):
-        findClick(commons)
-        auto()
-
-if __name__ == '__main__':
-    main()
