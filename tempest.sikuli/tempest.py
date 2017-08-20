@@ -23,8 +23,8 @@ def auto():
                 return False
 
 commons = [
-       "1499785682235.png",
-       "1499785699548.png",
+       "select stage.png",
+       Pattern("team 4, battle 5.png").exact(),
        "fight1.png",
        "fight2.png",
        "ok.png",

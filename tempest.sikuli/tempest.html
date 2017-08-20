@@ -85,26 +85,27 @@
         tryWaitAndClick(p)
 
 <span class="kw">def</span> auto():
-    <span class="kw">if</span> tryWaitAndClick(<img src="1499786291662.png" />, w2=<span class="dig">4</span>) \
-            <span class="kw">and</span> tryWaitAndClick(<img src="1499786340986.png" />, w1=<span class="dig">4</span>) \
-            <span class="kw">and</span> tryWaitAndClick(<img src="1499786373715.png" />, w1=<span class="dig">4</span>):
+    <span class="kw">if</span> tryWaitAndClick(<img src="menu.png" />, w2=<span class="dig">4</span>) \
+            <span class="kw">and</span> tryWaitAndClick(<img src="auto battle 1.png" />, w1=<span class="dig">4</span>) \
+            <span class="kw">and</span> tryWaitAndClick(<img src="auto battle 2.png" />, w1=<span class="dig">4</span>):
         <span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">256</span>):
-            <span class="kw">if</span> tryWaitAndClick(<img src="1499786636807.png" />):
+            <span class="kw">if</span> tryWaitAndClick(<img src="clear.png" />):
                 <span class="kw">return</span> True
-            <span class="kw">elif</span> tryWaitAndClick(<img src="1499786835386.png" />):
+            <span class="kw">elif</span> tryWaitAndClick(<img src="lose.png" />):
                 <span class="kw">return</span> False
 
 commons = [
-       <img src="1499785682235.png" />,
-       <img src="1499785699548.png" />,
-       <img src="1499786073887.png" />,
-       <img src="1499865066440.png" />,
-       <img src="1499786983787.png" />,
-       <img src="1499788779460.png" />,
+       <img src="select stage.png" />,
+       <img src="1503145660665.png" />,
+       <img src="fight1.png" />,
+       <img src="fight2.png" />,
+       <img src="ok.png" />,
+       <img src="close.png" />,
        ]
 
 <span class="kw">def</span> main():
-    <span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">64</span>):
+    <span class="cmt"># for i in range(64):</span>
+    <span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">64</span> * <span class="dig">64</span>):
         findClick(commons)
         auto()
 
