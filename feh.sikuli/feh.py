@@ -12,7 +12,7 @@ def tryWaitAndClick(p, w1=0.1, w2=0):
 
 def findClick(ps):
     for p in ps:
-        tryWaitAndClick(p, 1, 1)
+        tryWaitAndClick(p)
 
 def auto():
     if tryWaitAndClick("menu.png", w2=4) \
