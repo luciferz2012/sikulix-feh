@@ -6,12 +6,15 @@ lib_path.append(parent_path)
 
 import feh
 
-feh.commons += []
-
-from sys import argv
+feh.commons += [
+       Pattern("battle1.png").similar(0.9),
+       Pattern("proceed.png").similar(0.9),
+       Pattern("beginner.png").similar(0.9),
+       Pattern("battle2.png").similar(0.9),
+       ]
 
 def main():
-    print(argv)
+    # for i in range(64):
     for i in range(64 * 64):
         feh.findClick(feh.commons)
         feh.auto()

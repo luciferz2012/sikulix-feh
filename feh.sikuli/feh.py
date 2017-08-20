@@ -12,7 +12,7 @@ def tryWaitAndClick(p, w1=0.1, w2=0):
 
 def findClick(ps):
     for p in ps:
-        tryWaitAndClick(p)
+        tryWaitAndClick(p, 1, 1)
 
 def auto():
     if tryWaitAndClick("menu.png", w2=4) \
@@ -21,12 +21,16 @@ def auto():
         for i in range(256):
             if tryWaitAndClick("clear.png"):
                 return True
-            elif tryWaitAndClick("lose.png"):
+            elif tryWaitAndClick("lose.png") or tryWaitAndClick("game over.png"):
                 return False
 
+def close():
+    for i in range(8):
+        if not tryWaitAndClick(Pattern("close.png").similar(0.90), w1=1):
+            break
+
 commons = [
-       Pattern("fight1.png").similar(0.9),
-       Pattern("fight2.png").similar(0.9),
-       Pattern("ok.png").similar(0.9),
-       Pattern("close.png").similar(0.9),
+       Pattern("fight1.png").similar(0.90),
+       Pattern("fight2.png").similar(0.90),
+       Pattern("ok.png").similar(0.90),
        ]
