@@ -21,13 +21,17 @@ def auto():
         for i in range(256):
             if tryWaitAndClick("clear.png"):
                 return True
-            elif tryWaitAndClick("lose.png") or tryWaitAndClick("game over.png"):
+            elif tryWaitAndClick("lose.png") \
+                or tryWaitAndClick("game over.png"):
+                tryWaitAndClick(Pattern("give up.png").similar(0.90), w1=4)
                 return False
+            close()
 
 def close():
     for i in range(8):
         if not tryWaitAndClick(Pattern("close.png").similar(0.90), w1=1):
             break
+        wait(1)
 
 commons = [
        Pattern("fight1.png").similar(0.90),
